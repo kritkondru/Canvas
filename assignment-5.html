@@ -1,0 +1,124 @@
+<html>
+<head>
+  <style> 
+  </style>
+</head>
+  <body>
+    <div class="grid-container">
+    <div id="canvas">
+       <canvas id="c"></canvas>
+      </div>
+    </div>
+    <script>
+var c = document.getElementById("c");
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+var ctx = c.getContext("2d");
+
+//code for the top side
+var x=0;
+var y=0;
+for(x=0;x<=1000;x++){
+ctx.beginPath();
+ctx.moveTo(x,y-=30);
+ctx.bezierCurveTo(x+400,y-200,x+200,y+200, c.width/2, c.height/2);
+ctx.lineWidth=30;
+if(x%2==0)
+   {
+   ctx.strokeStyle = "black";
+   }
+   else
+   {
+      ctx.strokeStyle = "white";
+   }
+ctx.stroke();
+
+}
+
+//code for the top side
+var a=0;
+var b=0;
+for(a=0;a<=1000;a++){
+ctx.beginPath();
+ctx.moveTo(c.width/2,c.height/2);
+ctx.bezierCurveTo(a+1100,b+300,a+1000,b-180,a+1390,b-=30);
+ctx.lineWidth=30;
+if(a%2==0)
+   {
+   ctx.strokeStyle = "black";
+   }
+   else
+   {
+      ctx.strokeStyle = "white";
+   }
+ctx.stroke();
+}
+
+var x=0;
+var y=0;
+for(x=0;x<=1000;x++){
+ctx.beginPath();
+ctx.moveTo(x,y+=30);
+ctx.bezierCurveTo(x+400,y-200,x+200,y+200, c.width/2, c.height/2);
+ctx.lineWidth=30;
+if(x%2==0)
+   {
+   ctx.strokeStyle = "black";
+   }
+   else
+   {
+      ctx.strokeStyle = "white";
+   }
+ctx.stroke();
+}
+
+//code for the right side
+var a=0;
+var b=0;
+for(a=0;a<=1000;a++){
+ctx.beginPath();
+ctx.moveTo(c.width/2,c.height/2);
+ctx.bezierCurveTo(a+1100,b+300,a+1000,b-180,a+1390,b+=30);
+ctx.lineWidth=30;
+if(a%2==0)
+   {
+   ctx.strokeStyle = "black";
+   }
+   else
+   {
+      ctx.strokeStyle = "white";
+   }
+ctx.stroke();
+}
+
+ctx.strokeStyle="white";
+
+ctx.beginPath();
+ctx.arc(c.width/2, c.height/2,5, 0, 2 * Math.PI);
+ctx.fillStyle="white";
+ctx.lineWidth=8;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(c.width/2, c.height/2,50, 0, 2 * Math.PI);
+ctx.lineWidth=3;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(c.width/2, c.height/2,150, 0, 2 * Math.PI);
+ctx.lineWidth=5;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(c.width/2, c.height/2,350, 0, 2 * Math.PI);
+ctx.lineWidth=7;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(c.width/2, c.height/2,550, 0, 2 * Math.PI);
+ctx.lineWidth=30;
+ctx.stroke();
+
+    </script> 
+  </body>
+</html>
